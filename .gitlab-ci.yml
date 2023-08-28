@@ -26,6 +26,6 @@ deploy:
     entrypoint: ['']
   script:
     - kubectl config get-contexts
-    - kubectl config use-context sion2k/www.sion2k.ru:cornertop-k3s 
+    - kubectl config use-context sion2k/notion-inbox-bot:cornertop-k3s 
     - kubectl -n notion-bot apply -f deploy.yaml
     - kubectl -n notion-bot set image deployment www.sion2k.ru www.sion2k.ru=registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
