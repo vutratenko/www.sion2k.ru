@@ -1,0 +1,424 @@
+baseURL: "https://www.sion2k.ru"
+languageCode: "ru-RU"
+title: "Владимир Утратенко"
+theme: hugo-profile
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+Paginate: 3
+enableRobotsTXT: true
+# disqusShortname: your-disqus-shortname
+# googleAnalytics: G-MEASUREMENT_ID
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+Menus:
+  main:
+    - identifier: blog
+      name: Блог
+      title: Поток сознания
+      url: /blogs
+      weight: 1
+    #- identifier: gallery
+    #  name: Gallery
+    #  title: Blog posts
+    #  url: /gallery
+    #  weight: 2
+    #Dropdown menu
+    # - identifier: dropdown
+    #   title: Example dropdown menu
+    #   name: Dropdown
+    #   weight: 3
+    # - identifier: dropdown1
+    #   title: example dropdown 1
+    #   name: example 1
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 1
+    # - identifier: dropdown2
+    #   title: example dropdown 2
+    #   name: example 2
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 2
+
+params:
+  title: "Владимир Утратенко"
+  description: Страничка обо мне в этих ваших интернетах
+  # staticPath: ""  # The path to serve the static files from
+  favicon: "/firefighter-helmet.png"
+
+  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
+  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
+  # Note the lack of "" in true, it should be of boolean type.
+  useBootstrapCDN: false
+
+  # If you want to load dynamically responsive images from Cloudinary
+  # This requires your images to be uploaded + hosted on Cloudinary
+  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
+  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
+
+  # Whether the fade animations on the home page will be enabled
+  animate: true
+
+  theme:
+    # disableThemeToggle: true
+    # defaultTheme: "light" # dark
+
+  font:
+    fontSize: 1rem # default: 1rem
+    fontWeight: 400 # default: 400
+    lineHeight: 1.5 # default: 1.5
+    textAlign: left # default: left
+
+  # color preference
+  # color:
+  #   textColor:
+  #   secondaryTextColor:
+  #   backgroundColor:
+  #   secondaryBackgroundColor:
+  #   primaryColor:
+  #   secondaryColor:
+
+  #   darkmode:
+  #     textColor:
+  #     secondaryTextColor:
+  #     backgroundColor:
+  #     secondaryBackgroundColor:
+  #     primaryColor:
+  #     secondaryColor:
+
+  # If you want to customize the menu, you can change it here
+  navbar:
+    align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
+    # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
+    # showBrandLogo: false # Show brand logo in nav bar | default is true
+    brandName: "Владимир Утратенко" # Brand name for the brand | default is the title variable
+    disableSearch: false
+    # searchPlaceholder: "Search"
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableAchievements: false
+      disableContact: false
+
+  # Hero
+  hero:
+    enable: true
+    intro: "Привет! Я"
+    title: "Владимир,"
+    subtitle: "и я техдир."
+    content: "Инженерный лидер, одинаково хорошо умеющий в технику и управление. Человек-пожарный, который не боится трудных задач и кризисов. Спикер."
+    image: /images/photo.jpg
+    bottomImage:
+      enable: true
+    # roundImage: true # Make hero image circular | default false
+    button:
+      enable: true
+      name: "Резюме"
+      url: "resume"
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/vutratenko
+        - icon: fab fa-telegram
+          url: https://t.me/sion2k
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/vutratenko
+        - icon: fab fa-vk
+          url: https://vk.com/sion2k
+        - icon: fas fa-at
+          url: mailto:vladimir@sion2k.ru
+      #customIcons:
+      #  - icon: /fav.png
+      #    url: "https://example.com"
+
+  # About
+  about:
+    enable: true
+    title: "Обо мне"
+    image: "/images/me.jpg"
+    content: |-
+      Веду команды и ращу в них актуальные инженерные практики, позволяющие доставлять пользователям ценность, а бизнесу - развиваться. Успешно веду IT проекты. 
+      
+      Соорганизатор сообщества DevOps Moscow и конференции DevOpsDays Moscow. Имею опыт организации событий до 400 участников. 
+      
+      Спикер. Выступаю на DevOpsConf, UIC Dev, митапах IT-сообществ. Участвую в публичных мероприятиях.
+    skills:
+      enable: true
+      title: "Страшные слова, которые приходится использовать в работе:"
+      items:
+        - "Linux"
+        - "DevOps"
+        - "Scrum"
+        - "Kanban"
+        - "Git"
+        - "Kubernetes"
+        - "Go"
+        - "Python"
+        - "Java"
+        - "DORA"
+        - "Software Development"
+        - "Software Delivery"
+        - "Project Management"
+        - "Change Management"
+        - "Risk Management"
+        - "Budgeting"
+
+  # Experience
+  experience:
+    enable: true
+    title: "Мой опыт"
+    items:
+
+      - job: "Технический директор, Умный Дом"
+        company: "Ростелеком Информационные Технологии"
+        companyUrl: "https://rtkit.ru"
+        date: "Март 2023 - настоящее время"
+        info:
+          enable: false
+        featuredLink:
+          enable: true
+          name: "Посмотреть на Умный дом"
+          url: "https://lk.smarthome.rt.ru/"
+        content: |
+          Отвечаю за производство продукта "Видеонаблюдение и Умный Дом Ростелеком". Развиваю техническую команду продукта (50 человек), оптимизирую ИТ-процессы. Сформировал инженерную стратегию подразделения и начал её внедрение. Стабилизировал найм и доукомлектовал штат недостающими специалистами. Оценил и зафиксировал бюджетные потребности подразделения на остаток 2023 года.
+
+      - job: "Технический директор, Property Technology"
+        company: "R1"
+        companyUrl: "https://r1.team"
+        date: "Август 2021 - Март 2023"
+        featuredLink:
+          enable: true
+          name: "Много домофонов, хороших и разных"
+          url: "https://dom.ru/domofon"
+        info:
+          enable: false
+        content: |
+          Отвечал за всю инженерную часть бизнес-домена Property Tech (Цифровые технологии в области недвижимости, интернет вещей). Управлял бюджетом (CAPEX/OPEX) домена в части ИТ. Сформировал и успешно реализовывал техническую стратегию подразделения, согласованную с технической стратегией компании и бизнес-стратегией домена. Постоянно взаимодействовал с бизнес-заказчиком, партнёрами, поставщиками оборудования и ПО. Вывел команду и системы из состояния непрекращающейся аварии, доукомплектовал (с 30 до 50 человек) и запустил с обновлёнными процессами разработки и поставки. Производительность поставки выросла с уровня Medium до High по оценке DORA. Команда осуществила:
+
+          - Перенос нагруженного (1000 rps) бэкенда (~30 сервисов) из on-premise среды в облако с обновлением стека технологий, снизив стоимость владения инфраструктурой на 71%.
+
+          - Перезапуск мобильного приложения (1,5kk MAU) в новом архитектурном дизайне, дизайне интерфейсов, стеке и логике, дав возможность развивать и улучшать опыт пользователя.
+
+          - Старт декомпозиции монолитной части бэкенда и вынос части нагруженных компонент в более управляемые сервисы, снизив аварийность на 25% и подняв SLI доступности услуг с 86% до 98%.
+      
+      - job: "Engineering Manager"
+        company: "Sravni"
+        companyUrl: "https://sravni.ru"
+        date: "Октябрь 2020 - Август 2021"
+        featuredLink:
+          enable: true
+          name: "Выбери лучшее"
+          url: "https://sravni.ru"
+        info:
+          enable: false
+        content: |
+          Выступал в качестве заместителя CTO. Отвечал за инфраструктуру, технологическую платформу, поставку и инженерную культуру. Вёл ряд ключевых IT проектов. Помогал компании преодолеть вызовы оставшиеся от состояния стартапа и строить быструю и надёжную продуктовую разработку. Построил крепкое Agile-сообщество. Запустил команду технологической платформы, которая развивала общие сервисы компании, включая инфраструктуру, а так же стандарты разработки и эксплуатации.
+
+          За время работы команды осуществили:
+
+          - Реализацию защищённой по ГОСТ Р 57580.1-2017 инфраструктуры в публичном облаке, которая прошла аудит и получила уровень УЗ-2 безопасности данных, разблокировав возможность получения лицензии финансовой платформы от ЦБ РФ.
+
+          - Миграцию тестового контура из Hetzner в Yandex Cloud и приведение его в соответствие с продуктивной средой, что позволило увеличить качество функционального тестирования и разблокировать применение нагрузочных тестов.
+
+          - Общий платёжный шлюз, позволяющий командам интегрировать оплату на сайте независимо от эквайринга.
+
+      - job: "Head of Infrastructure Platform"
+        company: "X5 Group"
+        companyUrl: "https://x5.ru"
+        date: Июль 2019 - Октябрь 2020
+        info:
+          enable: false
+        content: |
+          Вёл параллельно несколько команд системных инженеров: команду инфраструктурной платформы, команду CI инженеров магазинных систем, горизонталь SRE продуктовых команд.
+          Вывел команду выгоревших инженеров инфраструктурной платформы на производительный уровень. Оптимизировал рабочие процессы в командах инфраструктурной платформы и магазинных систем. Укомплектовал горизонталь SRE магазинных систем.
+          Создал внутреннее DevOps сообщество Х5 (порядка 75 участников на момент ухода из компании).
+          Непрерывно работал с участниками процесса производства ПО над улучшением культуры разработки и внедрением практик DevOps и SRE.
+
+          Команда магазинных систем осуществила:
+          - Произвела трансформацию старой исторически сложившейся сборочной инфраструктуры в современную гибкую и расширяемую платформу.
+          - Значительное уменьшение техдолга конвейера поставки магазинных систем, увеличив SLI сборки до 96%
+          - Уменьшение времени сборки дистрибутивов на 50%
+          - Старт внутреннего проекта по переносу всей автоматизации с зоопарка скриптов на единый CLI на Python, улучшив качество кода и тестируемость сборочной автоматизации. Сейчас проект развивается и сборочная автоматизация производится в рамках него.
+
+          Команда инфраструктурной платформы осуществила:
+          - Переход на процесс непрерывной поставки инженеров
+          - Улучшение процесса поддержки внутренних пользователей и уменьшение времени закрытия заявок за счёт широкого покрытия задач автоматизацией
+          - Запуск сервиса API Gateway на основе Gravitee, реализовав возможность ситемам X5 предоставлять внешний API.
+
+      - job: "Senior DevOps Engineer"
+        company: "Wiley"
+        companyUrl: "https://wiley.com"
+        date: Ноябрь 2016 - Июль 2019
+        info:
+          enable: false
+        content: |
+          Развивал облачную автоматизацию и эксплуатацию для нескольких ключевых проектов компании во время цифровой трансформации. Руководил повседневными операциями российских и индийских членов команды. Выстроил Канбан процесс в команде DevOps. Участвовал в разработке сервисов. Работал с несколькими продуктовыми scrum-командами. Работал над внедрением CI/CD и других практик DevOps в продуктовых командах. Реализовал улучшенную проверку работоспособности сервисов. Уменьшил время развертывания сервисов с 2,5 часов до 15-20 минут. Ежедневно общался с англоговорящими коллегами по всему миру.
+
+      - job: "Senior Unix and Storage Engineer"
+        company: "DBI"
+        companyUrl: "https://dbi.ru"
+        date: Октябрь 2012 - Ноябрь 2016
+        info:
+          enable: false
+        content: |
+          Успешно совместил обязанности Unix и Storage администратора, создал различные сценарии автоматизации, которые упростили ежедневные операции как для Storage, так и для Unix команд. Наставлял членов команды Unix в изучении повседневных операций Storage команды.
+
+          В качестве администратора систем хранения я внедрял подходы Unix команды (такие как shell скрипты и рабочие процессы круглосуточной поддержки) для ежедневных операций Storage команды, таких как устранение неполадок, связанных с хранением. Успешно управлял огромными корпоративными системами хранения (HP 3Par, NetApp 7-mode и cluster-mode), а также более чем 200 серверами в качестве конечных точек хранения. Участвовал в процессах Agile Engineering Team (System Engineering, System Operations, Storage Operations) (удаленно с коллегами из США). Успешно сдал экзамен «NetApp Ceritfied Associate». Также общался с англоязычными клиентами и коллегами.
+
+  # Education
+  education:
+    enable: true
+    title: "Образование"
+    index: false
+    items:
+      - title: "Инженер-программист (специалист)"
+        school:
+          name: "Институт Радиотехники и Систем Управления Южного Федерального Университета"
+          url: "https://rtf.sfedu.ru/"
+        date: "2008 - 2016"
+        content: |-
+          Окончил специалитет ИРТСУ ЮФУ (г. Таганрог) по специальности "Управление и информатика в технических системах."
+      
+
+  # Achievements
+#  achievements:
+#    enable: true
+#    # title: "Custom Name"
+#    items:
+#      - title: Google kickstart runner
+#        content: I solved all problems with optimal solution.
+#        url: https://example.com
+#        image: /images/achievment.jpg
+#      - title: Facebook Hackathon Winner
+#        content: Developed a product using Artificial Intelligence.
+#        image: /images/achievment.jpg
+#      - title: Hugo Profile
+#        content: Developed a theme and getting 1K+ downloads per month.
+#        url: "https://github.com/gurusabarish/hugo-profile"
+#        image: /images/achievment.jpg
+#      - title: Microsoft Imagine Runner
+#        content: We are developed a product which can help others.
+#      - title: Google Summer of Code
+#        content: Contributed to a open source project.
+#        url: https://example.com
+
+  # projects
+#  projects:
+#    enable: true
+#    # title: "Custom Name"
+#    items:
+#      - title: Hugo Profile
+#        content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
+#        image: /images/projects/profile.png
+#        featured:
+#          name: Demo
+#          link: https://hugo-profile.netlify.app
+#        badges:
+#          - "Hugo"
+#          - "Bootstrap"
+#          - "Javascript"
+#        links:
+#          - icon: fa fa-envelope
+#            url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
+#          - icon: fab fa-github
+#            url: https://github.com/gurusabarish/hugo-profile
+#          - icon: fab fa-twitter
+#            url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+#
+#      - title: Image Converter
+#        content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
+#        image: /images/projects/converter.jpg
+#        featured:
+#          name: Demo
+#          link: https://django-converter.herokuapp.com
+#        badges:
+#          - "Django"
+#          - "Bootstrap"
+#        links:
+#          - icon: fab fa-github
+#            url: https://github.com/gurusabarish/converter
+#
+#      - title: Hugo Profile V2
+#        content: A clean and simple Hugo template for personal portfolio and blog.
+#        image: /images/projects/profile2.jpg
+#        featured:
+#          name: Demo V2
+#          link: https://hugo-profile-2.netlify.app
+#        badges:
+#          - "Hugo"
+#          - "Bootstrap"
+#          - "Javascript"
+#        links:
+#          - icon: fab fa-github
+#            url: https://github.com/gurusabarish/HugoProfileV2
+#
+  #Contact
+  contact:
+    enable: true
+    title: "Остаёмся на связи!"
+    content: "Я регулярно проверяю почту: если есть желание предложить что-то интересное или просто сказать \"Привет!\", пишите! Я обязательно отвечу."
+    email: vladimir@sion2k.ru
+    btnName: Написать письмо
+    # formspree:
+    #   enable: true # `contact.email` value will be ignored
+    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
+    #   emailCaption: "Enter your email address"
+    #   messageCaption: "Enter your message here"
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: Recent Posts
+      enable: true
+      disableFeaturedImage: false
+#    socialNetworks:
+#      github: https://github.com
+#      linkedin: https://linkedin.com
+#      twitter: https://twitter.com
+#      instagram: https://instagram.com
+#      facebook: https://facebook.com
+
+  # List pages like blogs and posts
+  listPages:
+    disableFeaturedImage: false
+
+  # Single pages like blog and post
+  singlePages:
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+
+  # For translations
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    pageNotFound: "Page not found"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
+
+  #customScripts: -| # You can add custom scripts which will be added before </body> tag
+  #  <script type="text/javascript"><!-- any script here --></script>
