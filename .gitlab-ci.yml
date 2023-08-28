@@ -4,7 +4,9 @@ stages:
 
 build_hugo:
   stage: build
-  image: gohugoio/hugo
+  image: 
+    name: gohugoio/hugo
+    entrypoint: ["/bin/sh", "-c"]
   script: 
     - hugo
   artifacts:
