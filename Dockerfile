@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN hugo
+RUN ls -l; hugo
 
 
 
