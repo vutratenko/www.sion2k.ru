@@ -27,5 +27,5 @@ deploy:
   script:
     - kubectl config get-contexts
     - kubectl config use-context sion2k/notion-inbox-bot:cornertop-k3s 
-    - kubectl -n notion-bot apply -f deploy.yaml
-    - kubectl -n notion-bot set image deployment www.sion2k.ru www.sion2k.ru=registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
+    - kubectl -n sion2k-site apply -f deploy.yaml
+    - kubectl -n sion2k-site set image deployment sion2k-site www.sion2k.ru=registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
