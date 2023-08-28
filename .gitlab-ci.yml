@@ -4,7 +4,6 @@ stages:
 
 build:
   stage: build
-  needs: ["build_hugo"]
   image: docker
   services:
     - docker:dind
