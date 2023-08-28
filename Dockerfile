@@ -12,8 +12,10 @@ RUN ls -l; hugo
 
 FROM nginx:alpine
 
-WORKDIR /app
+WORKDIR /app/public
 
 COPY --from=0 ./app/public .
+
+WORKDIR /app
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
