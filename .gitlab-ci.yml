@@ -4,7 +4,7 @@ stages:
 
 build_hugo:
   stage: build
-  image: gohugo/hugo
+  image: gohugoio/hugo
   script: hugo
   artifacts:
     paths:
@@ -12,6 +12,7 @@ build_hugo:
 
 build_docker:
   stage: build
+  needs: ["build_hugo"]
   image: docker
   services:
     - docker:dind
