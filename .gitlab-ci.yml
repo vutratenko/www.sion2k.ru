@@ -5,7 +5,8 @@ stages:
 build_hugo:
   stage: build
   image: gohugoio/hugo
-  script: hugo
+  script: 
+    - hugo
   artifacts:
     paths:
       - public
