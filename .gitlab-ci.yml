@@ -2,18 +2,7 @@ stages:
   - build
   - deploy
 
-build_hugo:
-  stage: build
-  image: 
-    name: gohugoio/hugo
-    entrypoint: ["/bin/sh", "-c"]
-  script: 
-    - hugo
-  artifacts:
-    paths:
-      - public
-
-build_docker:
+build:
   stage: build
   needs: ["build_hugo"]
   image: docker
