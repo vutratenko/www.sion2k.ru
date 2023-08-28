@@ -14,6 +14,6 @@ FROM nginx:alpine
 
 WORKDIR /app
 
-COPY --from=0 ./public .
+COPY --from=0 ./app/public .
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
