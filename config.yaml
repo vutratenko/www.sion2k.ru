@@ -82,12 +82,12 @@ params:
     textAlign: left # default: left
 
   # color preference
-  # color:
+  color:
   #   textColor:
   #   secondaryTextColor:
   #   backgroundColor:
   #   secondaryBackgroundColor:
-  #   primaryColor:
+    primaryColor: "#4f4f4f"
   #   secondaryColor:
 
   #   darkmode:
