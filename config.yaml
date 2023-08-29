@@ -25,8 +25,8 @@ markup:
 Menus:
   main:
     - identifier: blog
-      name: Блог
-      title: Поток сознания
+      name: Поток сознания
+      title: Бложек
       url: /blogs
       weight: 1
     #- identifier: gallery
@@ -409,10 +409,10 @@ params:
 
   # For translations
   terms:
-    read: "Read"
-    toc: "Table Of Contents"
-    copyright: "All rights reserved"
-    pageNotFound: "Page not found"
+    read: "Читать"
+    toc: "Содержание"
+    copyright: "Все права защищены"
+    pageNotFound: "Ой-ой! Здесь ничего нет!"
     emailText: "Check out this site"
 
   datesFormat:
