@@ -1,5 +1,5 @@
 ---
-title: "Initial commit"
+title: "Initial Commit"
 date: 2023-08-28T21:54:11Z
 draft: false
 ---
