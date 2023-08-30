@@ -133,7 +133,7 @@ params:
       newPage: false
     socialLinks:
       fontAwesomeIcons:
-        - icon: fas fa-calendar-days
+        - icon: fa-solid fa-calendar-days
           url: https://appt.link/meet-with-vladimir-utratenko
         - icon: fab fa-telegram
           url: https://t.me/sion2k
