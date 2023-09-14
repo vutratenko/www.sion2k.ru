@@ -142,7 +142,7 @@ params:
         - icon: fab fa-vk
           url: https://vk.com/sion2k
         - icon: fas fa-at
-          url: mailto:vladimir@sion2k.ru
+          url: mailto:vladimir@utratenko.ru
       #customIcons:
       #  - icon: /fav.png
       #    url: "https://example.com"
@@ -373,7 +373,7 @@ params:
     enable: true
     title: "Остаёмся на связи!"
     content: "Я регулярно проверяю почту: если есть желание предложить что-то интересное или просто сказать \"Привет!\", пишите! Я обязательно отвечу."
-    email: vladimir@sion2k.ru
+    email: vladimir@utratenko.ru
     btnName: Написать письмо
     # formspree:
     #   enable: true # `contact.email` value will be ignored
