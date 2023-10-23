@@ -186,6 +186,25 @@ params:
     enable: true
     title: "Мой опыт"
     items:
+      - job: "Head of Infrastructure and Security, Uzum Market"
+        company: "Uzum"
+        companyUrl: https://uzum.com/
+        date: "Октябрь 2023 - настоящее время"
+        info:
+          enable: false
+        featuredLink:
+          enable: true
+          name: Самый большой маркетплейс Узбекистана
+          url: "https://uzum.uz/ru"
+        content: |
+          Продуктовый стрим Uzum Market - это самый большой и популярный маркетплейс Узбекистана.
+
+          Отвечаю за:
+          - Бесперебойную работу инфраструктуры и сервисов
+          - Безопасность сервисов
+          - IT-процессы эксплуатации
+          - Бюджетирование инфраструктуры
+          
 
       - job: "Технический директор, Умный Дом"
         company: "Ростелеком Информационные Технологии"
