@@ -419,26 +419,25 @@ params:
       
 
   # Achievements
-#  achievements:
-#    enable: true
-#    # title: "Custom Name"
-#    items:
-#      - title: Google kickstart runner
-#        content: I solved all problems with optimal solution.
-#        url: https://example.com
-#        image: /images/achievment.jpg
-#      - title: Facebook Hackathon Winner
-#        content: Developed a product using Artificial Intelligence.
-#        image: /images/achievment.jpg
-#      - title: Hugo Profile
-#        content: Developed a theme and getting 1K+ downloads per month.
-#        url: "https://github.com/gurusabarish/hugo-profile"
-#        image: /images/achievment.jpg
-#      - title: Microsoft Imagine Runner
-#        content: We are developed a product which can help others.
-#      - title: Google Summer of Code
-#        content: Contributed to a open source project.
-#        url: https://example.com
+  achievements:
+    enable: true
+    title: "Конференции"
+    items:
+      - title: DevOpsDays Moscow 2019
+        content: DevOps в Enterprise.
+        url: https://www.youtube.com/watch?v=V6Dz7E1Xquc
+      - title: X5 Retail Hero
+        content: Карьера в IT.
+        url: https://www.youtube.com/watch?v=IQFVD7pZxQU
+      - title: DevOpsConf 2021
+        content: Несуществующие твари и где они обитают. Виды DevOps-инженеров и как в них разбираться.
+        url: "https://devopsconf.io/moscow/2021/abstracts/7532"
+      - title: UIC.Dev 2022
+        content: Управление инфраструктурой – это тоже про разработку?
+        url: "https://uic.dev/speakers/utratenko"
+      - title: UIC.Dev 2023
+        content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
+        url: "https://conf23.uic.dev/speakers/114"
 
   # projects
 #  projects:
