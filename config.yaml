@@ -120,7 +120,7 @@ params:
     intro: "Привет! Я"
     title: "Владимир,"
     subtitle: "и я техдир."
-    content: "Инженерный лидер, одинаково хорошо умеющий в технику и управление. Человек-пожарный, который не боится трудных задач, кризисов и работает на результат. Спикер."
+    content: "Инженерный лидер, одинаково хорошо умеющий в технику и управление. Эксперт, который не боится трудных задач, кризисов и работает на результат. Консультант. Спикер."
     image: /images/photo.jpg
     bottomImage:
       enable: true
@@ -154,6 +154,8 @@ params:
     image: "/images/me.jpg"
     content: |-
       Веду команды и ращу в них актуальные инженерные практики, позволяющие доставлять пользователям ценность, а бизнесу - развиваться. Успешно веду IT проекты. 
+
+      Консультирую команды разных размеров, помогая выстроить производителную инженерную и организационную культуру, что позволяет достигать лучших результатов.
       
       Пишу внутренние системы и личную автоматизацию на Python и Go.
 
@@ -509,12 +511,12 @@ params:
       title: Recent Posts
       enable: true
       disableFeaturedImage: false
-#    socialNetworks:
-#      github: https://github.com
-#      linkedin: https://linkedin.com
-#      twitter: https://twitter.com
-#      instagram: https://instagram.com
-#      facebook: https://facebook.com
+    socialNetworks:
+      github: https://github.com/vutratenko
+      linkedin: https://www.linkedin.com/in/vutratenko
+      instagram: https://instagram.com/sion2k
+      vk: https://vk.com/sion2k
+
 
   # List pages like blogs and posts
   listPages:
