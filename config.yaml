@@ -440,6 +440,9 @@ params:
       - title: UIC.Dev 2023
         content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
         url: "https://conf23.uic.dev/speakers/114"
+      - title: DevOpsConf 2024
+        content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
+        url: "https://devopsconf.io/moscow/2024/abstracts/11507"
 
   # projects
 #  projects:
