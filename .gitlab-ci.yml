@@ -30,31 +30,30 @@ build_static:
     paths:
       - ./public
 
-deploy_k8s:
-  stage: deploy
-  environment:
-    name: production
-    url: https://www.sion2k.ru/
-  image:
-    name: bitnami/kubectl:latest
-    entrypoint: ['']
-  script:
-    - kubectl config get-contexts
-    - kubectl config use-context sion2k/notion-inbox-bot:cornertop-k3s 
-    - kubectl -n sion2k-site apply -f deploy.yaml
-    - kubectl -n sion2k-site set image deployment sion2k-site sion2k-site=registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
+#deploy_k8s:
+#  stage: deploy
+#  environment:
+#    name: production
+#    url: https://www.sion2k.ru/
+#    name: bitnami/kubectl:latest
+#  image:
+#    entrypoint: ['']
+#  script:
+#    - kubectl config get-contexts
+#    - kubectl config use-context sion2k/notion-inbox-bot:cornertop-k3s 
+#    - kubectl -n sion2k-site apply -f deploy.yaml
+#    - kubectl -n sion2k-site set image deployment sion2k-site sion2k-site=registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
 
 deploy_s3:
   stage: deploy
   image: ubuntu:latest
+  dependencies:
+  - build_static
   before_script:
     - apt-get update
     - apt-get install -y curl
     - curl -sL -o /etc/apt/trusted.gpg.d/morph027-aws-cli.asc https://packaging.gitlab.io/aws-cli/deb/gpg.key
     - echo "deb https://packaging.gitlab.io/aws-cli/deb aws-cli main" | sudo tee /etc/apt/sources.list.d/morph027-aws-cli.list
     - apt-get install -y aws-cli aws-cli-keyring
-  artifacts:
-    paths:
-      - ./public
   script:
     - ls -l ./public
