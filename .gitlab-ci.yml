@@ -58,6 +58,4 @@ deploy:
     - apt-get install -y aws-cli
     - cp -R .aws ~/
   script:
-    - ls -l ./public
-    - aws s3 --endpoint-url=https://storage.yandexcloud.net ls s3://sion2k.ru
     - aws s3 --endpoint-url=https://storage.yandexcloud.net cp --recursive ./public/ s3://sion2k.ru/
