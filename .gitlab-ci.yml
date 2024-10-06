@@ -2,20 +2,20 @@ stages:
   - build
   - deploy
 
-build:
-  stage: build
-  image: docker
-  services:
-    - docker:dind
-  before_script:
-    - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
-    - apk update && apk add git
-    - cd themes; git clone https://github.com/gurusabarish/hugo-profile.git; cd ..
-  script:
-    - docker pull registry.gitlab.com/sion2k/www.sion2k.ru:latest
-    - docker build -t registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA} -t registry.gitlab.com/sion2k/www.sion2k.ru:latest --cache-from registry.gitlab.com/sion2k/www.sion2k.ru:latest .
-    - docker push registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
-    - docker push registry.gitlab.com/sion2k/www.sion2k.ru:latest
+#build:
+#  stage: build
+#  image: docker
+#    - docker:dind
+#  services:
+#  before_script:
+#    - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
+#    - apk update && apk add git
+#  script:
+#    - cd themes; git clone https://github.com/gurusabarish/hugo-profile.git; cd ..
+#    - docker pull registry.gitlab.com/sion2k/www.sion2k.ru:latest
+#    - docker build -t registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA} -t registry.gitlab.com/sion2k/www.sion2k.ru:latest --cache-from registry.gitlab.com/sion2k/www.sion2k.ru:latest .
+#    - docker push registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
+#    - docker push registry.gitlab.com/sion2k/www.sion2k.ru:latest
 
 build_static:
   stage: build
@@ -25,7 +25,9 @@ build_static:
     - apt install -y hugo
   script:
     - hugo
-
+  artifacts:
+    paths:
+      - /app/public
 
 deploy_k8s:
   stage: deploy
@@ -49,5 +51,8 @@ deploy_s3:
     - echo "deb https://packaging.gitlab.io/aws-cli/deb aws-cli main" | sudo tee /etc/apt/sources.list.d/morph027-aws-cli.list
     - apt-get update
     - apt-get install aws-cli aws-cli-keyring
+  artifacts:
+    paths:
+      - /app/public
   script:
-    - "true" 
+    - ls -l /app/public
