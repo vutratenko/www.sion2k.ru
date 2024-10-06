@@ -17,7 +17,7 @@ stages:
 #    - docker push registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
 #    - docker push registry.gitlab.com/sion2k/www.sion2k.ru:latest
 
-build_static:
+build:
   stage: build
   image: debian:stable
   before_script:
@@ -44,16 +44,17 @@ build_static:
 #    - kubectl -n sion2k-site apply -f deploy.yaml
 #    - kubectl -n sion2k-site set image deployment sion2k-site sion2k-site=registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
 
-deploy_s3:
+deploy:
   stage: deploy
   image: ubuntu:latest
   dependencies:
-  - build_static
+  - build
   before_script:
     - apt-get update
     - apt-get install -y curl
     - curl -sL -o /etc/apt/trusted.gpg.d/morph027-aws-cli.asc https://packaging.gitlab.io/aws-cli/deb/gpg.key
     - echo "deb https://packaging.gitlab.io/aws-cli/deb aws-cli main" | tee /etc/apt/sources.list.d/morph027-aws-cli.list
+    - apt-get update
     - apt-get install -y aws-cli aws-cli-keyring
   script:
     - ls -l ./public
