@@ -27,11 +27,11 @@ build:
     - mkdir /app
     - cp -R ./ /app
     - cd /app
-    - hugo -v
+    - hugo -v --debug
     - ls -l public
   artifacts:
     paths:
-      - ./app/public
+      - /app/public
 
 #deploy_k8s:
 #  stage: deploy
