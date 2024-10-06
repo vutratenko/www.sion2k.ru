@@ -28,7 +28,7 @@ build_static:
     - ls -l
   artifacts:
     paths:
-      - /public
+      - ./public
 
 deploy_k8s:
   stage: deploy
@@ -54,6 +54,6 @@ deploy_s3:
     - apt-get install aws-cli aws-cli-keyring
   artifacts:
     paths:
-      - /public
+      - ./public
   script:
-    - ls -l /public
+    - ls -l ./public
