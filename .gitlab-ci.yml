@@ -49,10 +49,10 @@ deploy_s3:
   image: ubuntu:latest
   before_script:
     - apt-get update
-    - apt-get install curl
+    - apt-get install -y curl
     - curl -sL -o /etc/apt/trusted.gpg.d/morph027-aws-cli.asc https://packaging.gitlab.io/aws-cli/deb/gpg.key
     - echo "deb https://packaging.gitlab.io/aws-cli/deb aws-cli main" | sudo tee /etc/apt/sources.list.d/morph027-aws-cli.list
-    - apt-get install aws-cli aws-cli-keyring
+    - apt-get install -y aws-cli aws-cli-keyring
   artifacts:
     paths:
       - ./public
