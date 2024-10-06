@@ -17,7 +17,7 @@ build:
     - docker push registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
     - docker push registry.gitlab.com/sion2k/www.sion2k.ru:latest
 
-deploy:
+deploy_k8s:
   stage: deploy
   environment:
     name: production
@@ -30,3 +30,12 @@ deploy:
     - kubectl config use-context sion2k/notion-inbox-bot:cornertop-k3s 
     - kubectl -n sion2k-site apply -f deploy.yaml
     - kubectl -n sion2k-site set image deployment sion2k-site sion2k-site=registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
+
+deploy_s3:
+  stage: deploy
+  image: ubuntu:latest
+  before_script:
+    - apt update
+    - apt install awscli
+  script:
+    - "true"
