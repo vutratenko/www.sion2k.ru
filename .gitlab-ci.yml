@@ -24,6 +24,7 @@ build:
     - apt update
     - apt install -y hugo
   script:
+    - ls -l
     - hugo -v --minify
     - ls -l public
   artifacts:
