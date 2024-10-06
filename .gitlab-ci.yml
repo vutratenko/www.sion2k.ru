@@ -58,5 +58,4 @@ deploy:
     - apt-get install -y aws-cli
   script:
     - ls -l ./public
-    - alias ycs3='aws s3 --endpoint-url=https://storage.yandexcloud.net'
-    - ycs3 ls
+    - aws s3 --endpoint-url=https://storage.yandexcloud.net ls
