@@ -17,6 +17,14 @@ build:
     - docker push registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
     - docker push registry.gitlab.com/sion2k/www.sion2k.ru:latest
 
+build_static:
+  stage: build
+  image: debian:stable
+  before_script:
+    - apt update
+    - apt install -y hugo
+
+
 deploy_k8s:
   stage: deploy
   environment:
@@ -36,6 +44,6 @@ deploy_s3:
   image: ubuntu:latest
   before_script:
     - apt update
-    - apt install awscli
+    - apt install -y aws-cli
   script:
     - "true"
