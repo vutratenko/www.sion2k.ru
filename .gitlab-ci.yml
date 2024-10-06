@@ -56,6 +56,7 @@ deploy:
     - echo "deb https://packaging.gitlab.io/aws-cli/deb aws-cli main" | tee /etc/apt/sources.list.d/morph027-aws-cli.list
     - apt-get update
     - apt-get install -y aws-cli
+    - cp -R .aws ~/
   script:
     - ls -l ./public
     - aws s3 --endpoint-url=https://storage.yandexcloud.net ls
