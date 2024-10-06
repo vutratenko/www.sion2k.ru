@@ -25,9 +25,10 @@ build_static:
     - apt install -y hugo
   script:
     - hugo
+    - ls -l
   artifacts:
     paths:
-      - /app/public
+      - /public
 
 deploy_k8s:
   stage: deploy
@@ -53,6 +54,6 @@ deploy_s3:
     - apt-get install aws-cli aws-cli-keyring
   artifacts:
     paths:
-      - /app/public
+      - /public
   script:
-    - ls -l /app/public
+    - ls -l /public
