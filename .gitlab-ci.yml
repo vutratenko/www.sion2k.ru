@@ -24,14 +24,12 @@ build:
     - apt update
     - apt install -y hugo
   script:
-    - mkdir /app
-    - cp -R ./ /app
-    - cd /app
-    - hugo -v --debug
+    - ls -l
+    - hugo -v --minify
     - ls -l public
   artifacts:
     paths:
-      - /app/public
+      - ./public
 
 #deploy_k8s:
 #  stage: deploy
