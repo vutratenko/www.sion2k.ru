@@ -23,6 +23,8 @@ build_static:
   before_script:
     - apt update
     - apt install -y hugo
+  script:
+    - hugo
 
 
 deploy_k8s:
