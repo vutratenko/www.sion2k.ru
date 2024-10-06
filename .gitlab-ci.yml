@@ -2,21 +2,6 @@ stages:
   - build
   - deploy
 
-#build:
-#  stage: build
-#  image: docker
-#    - docker:dind
-#  services:
-#  before_script:
-#    - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
-#    - apk update && apk add git
-#  script:
-#    - cd themes; git clone https://github.com/gurusabarish/hugo-profile.git; cd ..
-#    - docker pull registry.gitlab.com/sion2k/www.sion2k.ru:latest
-#    - docker build -t registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA} -t registry.gitlab.com/sion2k/www.sion2k.ru:latest --cache-from registry.gitlab.com/sion2k/www.sion2k.ru:latest .
-#    - docker push registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
-#    - docker push registry.gitlab.com/sion2k/www.sion2k.ru:latest
-
 build:
   stage: build
   image: debian:stable
@@ -24,26 +9,10 @@ build:
     - apt update
     - apt install -y hugo
   script:
-    - ls -l
     - hugo -v --minify
-    - ls -l public
   artifacts:
     paths:
       - ./public
-
-#deploy_k8s:
-#  stage: deploy
-#  environment:
-#    name: production
-#    url: https://www.sion2k.ru/
-#    name: bitnami/kubectl:latest
-#  image:
-#    entrypoint: ['']
-#  script:
-#    - kubectl config get-contexts
-#    - kubectl config use-context sion2k/notion-inbox-bot:cornertop-k3s 
-#    - kubectl -n sion2k-site apply -f deploy.yaml
-#    - kubectl -n sion2k-site set image deployment sion2k-site sion2k-site=registry.gitlab.com/sion2k/www.sion2k.ru:${CI_COMMIT_SHORT_SHA}
 
 deploy:
   stage: deploy
@@ -59,5 +28,4 @@ deploy:
     - apt-get install -y aws-cli
     - cp -R .aws ~/
   script:
-    - ls -l public
     - aws s3 --endpoint-url=https://storage.yandexcloud.net cp --recursive ./public/ s3://sion2k.ru/
