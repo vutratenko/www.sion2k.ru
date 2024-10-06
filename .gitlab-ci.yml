@@ -55,6 +55,6 @@ deploy:
     - curl -sL -o /etc/apt/trusted.gpg.d/morph027-aws-cli.asc https://packaging.gitlab.io/aws-cli/deb/gpg.key
     - echo "deb https://packaging.gitlab.io/aws-cli/deb aws-cli main" | tee /etc/apt/sources.list.d/morph027-aws-cli.list
     - apt-get update
-    - apt-get install -y aws-cli aws-cli-keyring
+    - apt-get install -y aws-cli
   script:
     - ls -l ./public
