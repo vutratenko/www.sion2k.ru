@@ -24,7 +24,7 @@ build:
     - apt update
     - apt install -y hugo
   script:
-    - hugo
+    - hugo --logLevel info
     - ls -l public
   artifacts:
     paths:
