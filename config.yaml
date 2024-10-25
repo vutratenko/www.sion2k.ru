@@ -423,26 +423,37 @@ params:
   # Achievements
   achievements:
     enable: true
-    title: "Конференции"
+    title: "Публикации"
     items:
-      - title: DevOpsDays Moscow 2019
-        content: DevOps в Enterprise.
-        url: https://www.youtube.com/watch?v=V6Dz7E1Xquc
-      - title: X5 Retail Hero
-        content: Карьера в IT.
-        url: https://www.youtube.com/watch?v=IQFVD7pZxQU
-      - title: DevOpsConf 2021
-        content: Несуществующие твари и где они обитают. Виды DevOps-инженеров и как в них разбираться.
-        url: "https://devopsconf.io/moscow/2021/abstracts/7532"
-      - title: UIC.Dev 2022
-        content: Управление инфраструктурой – это тоже про разработку?
-        url: "https://uic.dev/speakers/utratenko"
-      - title: UIC.Dev 2023
+      - title: "Monthly Cloud News 23"
+        content: "Monthly Cloud News 23: как меняется позиция CIO"
+        url: "https://vk.com/video-200452713_456239455?list=ln-H1Po7r5upitZZlsz4u&utm_source=telegram&utm_medium=own&utm_campaign=yandexcloudnews&utm_content=monthlycloudnews23&utm_term=01_10_2024"
+      - title: "Habr"
         content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
-        url: "https://conf23.uic.dev/speakers/114"
+        url: "https://habr.com/ru/companies/oleg-bunin/articles/821867/"
       - title: DevOpsConf 2024
         content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
         url: "https://devopsconf.io/moscow/2024/abstracts/11507"
+      - title: UIC.Dev 2023
+        content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
+        url: "https://conf23.uic.dev/speakers/114"
+      - title: UIC.Dev 2023
+        content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
+        url: "https://conf23.uic.dev/speakers/114"
+      - title: UIC.Dev 2022
+        content: Управление инфраструктурой – это тоже про разработку?
+        url: "https://uic.dev/speakers/utratenko"
+      - title: DevOpsConf 2021
+        content: Несуществующие твари и где они обитают. Виды DevOps-инженеров и как в них разбираться.
+        url: "https://devopsconf.io/moscow/2021/abstracts/7532"
+      - title: X5 Retail Hero
+        content: Карьера в IT.
+        url: https://www.youtube.com/watch?v=IQFVD7pZxQU
+      - title: DevOpsDays Moscow 2019
+        content: DevOps в Enterprise.
+        url: https://www.youtube.com/watch?v=V6Dz7E1Xquc
+      
+
 
   # projects
 #  projects:
