@@ -440,9 +440,6 @@ params:
       - title: UIC.Dev 2023
         content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
         url: "https://conf23.uic.dev/speakers/114"
-      - title: UIC.Dev 2023
-        content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
-        url: "https://conf23.uic.dev/speakers/114"
       - title: UIC.Dev 2022
         content: Управление инфраструктурой – это тоже про разработку?
         url: "https://uic.dev/speakers/utratenko"
