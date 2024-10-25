@@ -188,7 +188,7 @@ params:
     enable: true
     title: "Мой опыт"
     items:
-      - job: "Head of Infrastructure and Security, Uzum Market"
+      - job: "Head of Infrastructure and Information Security, Uzum Market"
         company: "Uzum"
         companyUrl: https://uzum.com/
         date: "Октябрь 2023 - настоящее время"
@@ -196,7 +196,7 @@ params:
           enable: false
         featuredLink:
           enable: true
-          name: Самый большой маркетплейс Узбекистана
+          name: Самый большой маркетплейс Центральной Азии
           url: "https://uzum.uz/ru"
         content: |
           Продуктовый стрим Uzum Market - это самый большой и популярный маркетплейс Узбекистана.
