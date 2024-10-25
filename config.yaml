@@ -431,6 +431,9 @@ params:
       - title: "Habr"
         content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
         url: "https://habr.com/ru/companies/oleg-bunin/articles/821867/"
+      - title: "Fusion Innovation Technologies - Moscow"
+        content: "Как технологии в ритейле меняют наши привычки"
+        url: "https://youtu.be/ziE6eaTbDG4"
       - title: DevOpsConf 2024
         content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
         url: "https://devopsconf.io/moscow/2024/abstracts/11507"
