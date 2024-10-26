@@ -18,8 +18,8 @@ draft: false
 
 [ref](https://t.me/really_vova/17)
 
-![a](https://sion2k.ru/first-podcast/1.jpg "selfie")
-![b](https://sion2k.ru/first-podcast/2.jpg "makeup-1")
-![c](https://sion2k.ru/first-podcast/3.jpg "makeup-2")
-![d](https://sion2k.ru/first-podcast/4.jpg "studio-1")
-![e](https://sion2k.ru/first-podcast/5.jpg "studio-2")
+![a](https://sion2k.ru/first-podcast/1.jpeg "selfie")
+![b](https://sion2k.ru/first-podcast/2.jpeg "makeup-1")
+![c](https://sion2k.ru/first-podcast/3.jpeg "makeup-2")
+![d](https://sion2k.ru/first-podcast/4.jpeg "studio-1")
+![e](https://sion2k.ru/first-podcast/5.jpeg "studio-2")

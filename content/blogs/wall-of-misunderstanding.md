@@ -4,7 +4,7 @@ date: 2024-05-17T00:36:00Z
 draft: false
 ---
 
-![a](https://sion2k.ru/2-river-banks.jpg "meme")
+![a](https://sion2k.ru/2-river-banks.jpeg "meme")
 
 С полей [обсуждения моего доклада](https://t.me/DevOpsConfChannel/1191) на DevOpsConf прилетел вопрос: компромисс ли использование шареного кода пайплайна при построении герметичных репозиториев?
 
