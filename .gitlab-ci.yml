@@ -16,16 +16,11 @@ build:
 
 deploy:
   stage: deploy
-  image: ubuntu:latest
+  image: python:latest
   dependencies:
   - build
   before_script:
-    - apt-get update
-    - apt-get install -y curl
-    - curl -sL -o /etc/apt/trusted.gpg.d/morph027-aws-cli.asc https://packaging.gitlab.io/aws-cli/deb/gpg.key
-    - echo "deb https://packaging.gitlab.io/aws-cli/deb aws-cli main" | tee /etc/apt/sources.list.d/morph027-aws-cli.list
-    - apt-get update
-    - apt-get install -y aws-cli
+    - pip install awscli
     - cp -R .aws ~/
   script:
     - aws s3 --endpoint-url=https://storage.yandexcloud.net cp --recursive ./public/ s3://sion2k.ru/
