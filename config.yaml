@@ -153,6 +153,8 @@ params:
     title: "Обо мне"
     image: "/images/me.jpg"
     content: |-
+      За более чем двенадцать лет в IT приобрёл уникальный опыт во многих областях. Изначально системный инженер, сейчас успешно руковожу как разработкой так и эксплуатаций, участвую в архитектурной деятельности, нанимаю сотрудников, налаживаю партнёрские связи как внутри организации, так и снаружи.
+
       Веду команды и ращу в них актуальные инженерные практики, позволяющие доставлять пользователям ценность, а бизнесу - развиваться. Успешно веду IT проекты. 
 
       Консультирую команды разных размеров, помогая выстроить производителную инженерную и организационную культуру, что позволяет достигать лучших результатов.
@@ -166,29 +168,33 @@ params:
       enable: true
       title: "Страшные слова, которые приходится использовать в работе:"
       items:
-        - "Linux"
-        - "DevOps"
-        - "Scrum"
-        - "Kanban"
-        - "Git"
-        - "Kubernetes"
-        - "Go"
-        - "Python"
-        - "Java"
-        - "DORA"
         - "Software Development"
         - "Software Delivery"
         - "Project Management"
         - "Change Management"
-        - "Risk Management"
+        - "Team management"
+        - "Leadership"
+        - "Управление процессами"
+        - "Ведение переговоров"
+        - "Управление разработкой"
         - "Budgeting"
+        - "Risk Management"
+        - "Agile"
+        - "Go"
+        - "Python"
+        - "Java"
+        - "DevOps"
+        - "Scrum"
+        - "Kanban"
+        - "Kubernetes"
+        - "DORA"
 
   # Experience
   experience:
     enable: true
     title: "Мой опыт"
     items:
-      - job: "Head of Infrastructure and Information Security, Uzum Market"
+      - job: "CTO, Infrastructure Platform services, Uzum Market"
         company: "Uzum"
         companyUrl: https://uzum.com/
         date: "Октябрь 2023 - настоящее время"
