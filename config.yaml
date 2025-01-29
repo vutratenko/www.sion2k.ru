@@ -295,7 +295,7 @@ params:
           
           ✔ Начата декомпозиция монолитной части бэкенда и вынос части нагруженных компонент в более управляемые сервисы, снизив аварийность на 25% и подняв SLI доступности услуг с 86% до 98%.
       
-      - job: "Engineering Manager"
+      - job: "Engineering Manager, Platform services"
         company: "Sravni"
         companyUrl: "https://sravni.ru"
         date: "Октябрь 2020 - Август 2021"
