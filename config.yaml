@@ -174,16 +174,16 @@ params:
         - "Ведение переговоров"
         - "Управление разработкой"
         - "Budgeting"
+        - "DORA"
+        - "Scrum"
+        - "Kanban"
         - "Risk Management"
         - "Agile"
         - "Go"
         - "Python"
         - "Java"
         - "DevOps"
-        - "Scrum"
-        - "Kanban"
         - "Kubernetes"
-        - "DORA"
 
   # Experience
   experience:
@@ -205,16 +205,18 @@ params:
 
           Обязанности:
 
+          - Управление командой разработки (Go, Vue.js, QA, Design)
+          
+          - Управление продуктом "DevHub" в качестве владельца продукта
+
+          - Развитие Developer Experience (улучшение метрик разработки)
+
           - Руководство доменом инфраструктурной платформы и информационной безопасности
 
           - Развитие и поддержка облачной инфраструктуры (Yandex Cloud, Selectel)
           
-          - Внедрение SRE практик
-          
-          - Развитие Developer Experience
-          
-          - Управление внутренним продуктом "DevHub (Внутренний портал разработчика)" в роли владельца продукта
-          
+          - Внедрение SRE практик (Incident Management, Postmortems, SLI/SLO)
+                              
           - Управление бюджетом домена
           
           
