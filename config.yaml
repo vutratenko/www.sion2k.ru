@@ -538,6 +538,9 @@ params:
     enable: true
     title: "Публикации"
     items:
+      - title: "DevOpsConf 2025"
+        content: "А это платформа?"
+        url: "https://devopsconf.io/moscow/2025/abstracts/14098"
       - title: "Monthly Cloud News 23"
         content: "Monthly Cloud News 23: как меняется позиция CIO"
         url: "https://vk.com/video-200452713_456239455?list=ln-H1Po7r5upitZZlsz4u&utm_source=telegram&utm_medium=own&utm_campaign=yandexcloudnews&utm_content=monthlycloudnews23&utm_term=01_10_2024"
@@ -568,7 +571,7 @@ params:
       
 
 
-  # projects
+# projects
 #  projects:
 #    enable: true
 #    # title: "Custom Name"
