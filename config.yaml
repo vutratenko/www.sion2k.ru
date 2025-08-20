@@ -190,10 +190,22 @@ params:
     enable: true
     title: "Мой опыт"
     items:
+      - job: "BDM, Штурвал"
+        company: "Лаборатория Числитель"
+        companyUrl: https://chislitellab.ru/
+        date: "Май 2023 - настоящее время"
+        info:
+          enable: false
+        featuredLink:
+          enable: true
+          name: "Штурвал"
+          url: "https://chislitellab.ru/shturval"
+        content: |
+          Штурвал - платформа контейнеризации на базе Kubernetes Cluster API. 
       - job: "CTO, Infrastructure Platform services, Uzum Market"
         company: "Uzum"
         companyUrl: https://uzum.com/
-        date: "Октябрь 2023 - настоящее время"
+        date: "Октябрь 2023 - Февраль 2025"
         info:
           enable: false
         featuredLink:
