@@ -198,10 +198,11 @@ params:
           enable: false
         featuredLink:
           enable: true
-          name: "Штурвал"
+          name: "Вращаем вместе вправо и влево"
           url: "https://chislitellab.ru/shturval"
         content: |
-          Штурвал - платформа контейнеризации на базе Kubernetes Cluster API. 
+          Штурвал - платформа контейнеризации для компаний уровня Enterprise на базе Kubernetes Cluster API. 
+
       - job: "CTO, Infrastructure Platform services, Uzum Market"
         company: "Uzum"
         companyUrl: https://uzum.com/
@@ -550,6 +551,12 @@ params:
     enable: true
     title: "Публикации"
     items:
+      - title: "Habr"
+        content: "От DevOps к платформе: как улучшить взаимодействие команд"
+        url: "https://habr.com/ru/companies/oleg-bunin/articles/948108/"
+      - title: IT Elements 2025
+        content: "Коммерческий дистрибутив или свой собственный K8s. Какой путь выбрать?"
+        url: "https://rutube.ru/video/19b48f922cb5d969dc205a5fa63bfb6f/?playlist=1178137"
       - title: "DevOpsConf 2025"
         content: "А это платформа?"
         url: "https://devopsconf.io/moscow/2025/abstracts/14098"
