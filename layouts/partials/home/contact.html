@@ -1,0 +1,24 @@
+{{ if .Site.Params.contact.enable | default false }}
+<section id="contact" class="py-5 home-section">
+    <div class="container px-3 px-sm-5">
+        <h2 class="home-section-title text-center">{{ .Site.Params.contact.title }}</h2>
+        <div class="home-contact">
+            <div class="home-prose text-center">
+                {{ .Site.Params.contact.content | markdownify }}
+            </div>
+            <div class="home-contact-actions d-flex flex-wrap justify-content-center">
+                {{ with .Site.Params.contact.telegram }}
+                <a href="{{ . }}" class="btn" target="_blank" rel="noopener">
+                    {{ $.Site.Params.contact.telegramName | default "Написать в Telegram" }}
+                </a>
+                {{ end }}
+                {{ with .Site.Params.contact.email }}
+                <a href="mailto:{{ . }}" class="btn home-btn-secondary">
+                    {{ $.Site.Params.contact.btnName | default "Написать письмо" }}
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

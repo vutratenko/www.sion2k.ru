@@ -1,0 +1,15 @@
+{{ with .Site.Data.formats }}
+<section id="formats" class="py-5 home-section">
+    <div class="container px-3 px-sm-5">
+        <h2 class="home-section-title text-center">Как могу подключиться</h2>
+        <div class="home-card-grid home-formats-grid">
+            {{ range sort . "order" }}
+            <article class="home-card home-card-compact">
+                <h3 class="home-card-title">{{ .title }}</h3>
+                <p class="home-card-lead mb-0">{{ .description }}</p>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

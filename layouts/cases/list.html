@@ -1,0 +1,31 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Params.description | default .Title }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/list.css" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/home.css" media="all">
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<div class="container pt-5 pb-5 px-3 px-sm-5" id="list-page">
+    <h1 class="home-section-title text-center pb-2">{{ .Title }}</h1>
+    {{ with .Content }}
+    <div class="home-prose text-center mb-4">{{ . }}</div>
+    {{ end }}
+    <div class="home-card-grid home-cases-grid">
+        {{ range .Pages.ByWeight }}
+        <article class="home-card home-case-card">
+            <h2 class="home-card-title h4">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            {{ with .Params.description }}
+            <p class="home-card-lead">{{ . }}</p>
+            {{ end }}
+            <a class="home-text-link" href="{{ .RelPermalink }}">Читать кейс</a>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

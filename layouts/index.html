@@ -1,0 +1,23 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Site.Params.description }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/index.css" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/home.css" media="all">
+<script defer src="{{ .Site.Params.staticPath }}/fontawesome-6/all-6.4.2.js"></script>
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }}
+{{ end }}
+
+{{ define "main" }}
+{{- partial "home/hero.html" . -}}
+{{- partial "home/services.html" . -}}
+{{- partial "home/formats.html" . -}}
+{{- partial "home/results.html" . -}}
+{{- partial "home/cases.html" . -}}
+{{- partial "home/product.html" . -}}
+{{- partial "home/about.html" . -}}
+{{- partial "home/publications.html" . -}}
+{{- partial "home/testimonials.html" . -}}
+{{- partial "home/contact.html" . -}}
+{{ end }}

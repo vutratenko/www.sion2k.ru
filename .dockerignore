@@ -1,0 +1,10 @@
+.aws/
+public/
+.hugo_build.lock
+.git/
+deploy/
+infra/
+.github/
+*.md
+!content/**/*.md
+!archetypes/**/*.md

@@ -1,0 +1,29 @@
+{{ $pubs := slice }}
+{{ range .Site.Params.achievements.items }}
+    {{ if .featured }}
+        {{ $pubs = $pubs | append . }}
+    {{ end }}
+{{ end }}
+{{ if $pubs }}
+<section id="publications" class="py-5 home-section">
+    <div class="container px-3 px-sm-5">
+        <h2 class="home-section-title text-center">
+            {{ .Site.Params.home.publications.title | default "Иногда рассказываю о том, что успел проверить на практике" }}
+        </h2>
+        <div class="home-card-grid home-pubs-grid">
+            {{ range $pubs }}
+            <article class="home-card home-card-compact">
+                <p class="home-pub-venue">{{ .title }}</p>
+                <h3 class="home-card-title h5">
+                    {{ if .url }}
+                    <a href="{{ .url }}" target="_blank" rel="noopener">{{ .content }}</a>
+                    {{ else }}
+                    {{ .content }}
+                    {{ end }}
+                </h3>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

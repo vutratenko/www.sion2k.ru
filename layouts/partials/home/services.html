@@ -1,0 +1,25 @@
+{{ with .Site.Data.services }}
+<section id="services" class="py-5 home-section">
+    <div class="container px-3 px-sm-5">
+        <h2 class="home-section-title text-center">С чем ко мне приходят</h2>
+        <div class="home-card-grid home-services-grid">
+            {{ range sort . "order" }}
+            <article class="home-card" {{ with .anchor }}id="{{ . }}"{{ end }}>
+                <h3 class="home-card-title">{{ .title }}</h3>
+                <p class="home-card-lead">{{ .description }}</p>
+                {{ with .topics }}
+                <ul class="home-topic-list">
+                    {{ range . }}
+                    <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+                {{ with .extra }}
+                <p class="home-card-note">{{ . }}</p>
+                {{ end }}
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

@@ -1,21 +1,17 @@
-FROM debian:stable
+# syntax=docker/dockerfile:1
 
-RUN apt update && apt install -y hugo
+FROM hugomods/hugo:0.154.5-extended AS builder
 
-WORKDIR /app
-
+WORKDIR /src
 COPY . .
+RUN hugo --gc --minify
 
-RUN hugo; ls -l public
+FROM nginx:1.27-alpine
 
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder /src/public /app/public
 
+EXPOSE 8080
 
-FROM nginx:alpine
-
-WORKDIR /app/public
-
-COPY --from=0 ./app/public .
-
-WORKDIR /app
-
-COPY ./nginx.conf /etc/nginx/nginx.conf
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD wget -qO- http://127.0.0.1:8080/ >/dev/null || exit 1

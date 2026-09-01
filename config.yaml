@@ -1,5 +1,6 @@
-baseURL: "https://www.sion2k.ru"
-languageCode: "ru-RU"
+baseURL: "https://sion2k.ru"
+languageCode: "ru"
+defaultContentLanguage: "ru"
 title: "Владимир Утратенко"
 theme: hugo-profile
 
@@ -12,7 +13,8 @@ outputs:
     - "HTML"
     - "RSS"
 
-Paginate: 3
+pagination:
+  pagerSize: 3
 enableRobotsTXT: true
 # disqusShortname: your-disqus-shortname
 googleAnalytics: G-YR6TK760BG
@@ -24,11 +26,31 @@ markup:
 
 Menus:
   main:
+    - identifier: services
+      name: Чем могу помочь
+      title: С чем ко мне приходят
+      url: /#services
+      weight: 1
+    - identifier: cases
+      name: Кейсы
+      title: Кейсы
+      url: /cases/
+      weight: 2
+    - identifier: cv
+      name: Резюме
+      title: Полное резюме
+      url: /cv/
+      weight: 3
     - identifier: blog
       name: Поток сознания
       title: Бложек
       url: /blogs
-      weight: 1
+      weight: 4
+    - identifier: contact
+      name: Написать
+      title: Контакты
+      url: /#contact
+      weight: 5
     #- identifier: gallery
     #  name: Gallery
     #  title: Blog posts
@@ -54,7 +76,9 @@ Menus:
 
 params:
   title: "Владимир Утратенко"
-  description: Страничка обо мне в этих ваших интернетах
+  description: "Карьерные консультации, DevOps, архитектура и технические проекты. CPO Штурвала, бывший CTO и инженерный руководитель."
+  images:
+    - /images/photo.jpg
   # staticPath: ""  # The path to serve the static files from
   favicon: "/firefighter-helmet.png"
 
@@ -105,63 +129,67 @@ params:
     # showBrandLogo: false # Show brand logo in nav bar | default is true
     brandName: "Владимир Утратенко" # Brand name for the brand | default is the title variable
     disableSearch: false
+    searchPlaceholder: "Поиск..."
     # searchPlaceholder: "Search"
     menus:
-      disableAbout: false
-      disableExperience: false
-      disableEducation: false
-      disableProjects: false
-      disableAchievements: false
-      disableContact: false
+      disableAbout: true
+      disableExperience: true
+      disableEducation: true
+      disableProjects: true
+      disableAchievements: true
+      disableContact: true
 
   # Hero
   hero:
     enable: true
-    intro: "Привет! Я"
-    title: "Владимир,"
-    subtitle: "и я техдир."
-    content: "Инженерный лидер, одинаково хорошо умеющий в технику и управление. Эксперт, который не боится трудных задач, кризисов и работает на результат. Консультант. Спикер."
+    intro: "Владимир Утратенко"
+    title: "Помогаю разбираться со сложными задачами в IT — от карьеры до архитектуры и продукта."
+    subtitle: ""
+    content: "CPO Штурвала, бывший CTO и инженерный руководитель. Консультирую по карьере, DevOps, архитектуре и процессам разработки, веду технические проекты и иногда собираю небольшие сервисы и ботов."
     image: /images/photo.jpg
     bottomImage:
-      enable: true
+      enable: false
     # roundImage: true # Make hero image circular | default false
     button:
       enable: true
-      name: "Резюме"
-      url: "resume.pdf"
-      download: true
+      name: "Обсудить задачу"
+      url: "#contact"
+      download: false
       newPage: false
+    buttonSecondary:
+      enable: true
+      name: "Чем могу помочь"
+      url: "#services"
     socialLinks:
       fontAwesomeIcons:
         - icon: fas fa-calendar
           url: https://cal.com/sion2k
+          label: Календарь
         - icon: fab fa-telegram
           url: https://t.me/really_vova
+          label: Telegram
         - icon: fab fa-linkedin
           url: https://www.linkedin.com/in/vutratenko
+          label: LinkedIn
         - icon: fab fa-vk
           url: https://vk.com/sion2k
+          label: VK
         - icon: fas fa-at
           url: mailto:vladimir@utratenko.ru
+          label: Почта
       #customIcons:
       #  - icon: /fav.png
       #    url: "https://example.com"
 
-  # About
+  # About (старый блок темы не рендерится на главной)
   about:
-    enable: true
+    enable: false
     title: "Обо мне"
     image: "/images/me.jpg"
     content: |-
-      CTO с 12-летним опытом в управлении ИТ-инфраструктурой и кросс-функциональными командами до 55 человек со стеком: Java, Python, Go, Ruby, ReactJS, VueJS, Kotlin, Swift, Kubernetes, Postgres, Clickhouse, Kafka и нагрузкой до 4000 rps.
-      
-      Специализируюсь на цифровой трансформации, оптимизации процессов разработки и снижении TCO. Успешно реализовал проекты для компаний с аудиторией 1.5M+ MAU. 
-      
-      Автор публикаций и спикер DevOpsConf. Увлекаюсь изучением новых технологий и менторством молодых специалистов.
-
-      Готов вести компании через scaling и кризисные ситуации, сочетая техническую экспертизу и бизнес-ориентированность.
+      Начинал системным инженером, затем занимался DevOps, Platform Engineering и инфраструктурой, управлял техническими командами и работал CTO. Сейчас отвечаю за продукт Штурвал.
     skills:
-      enable: true
+      enable: false
       title: "Страшные слова, которые приходится использовать в работе:"
       items:
         - "Software Development"
@@ -190,7 +218,7 @@ params:
     enable: true
     title: "Мой опыт"
     items:
-      - job: "BDM, Штурвал"
+      - job: "CPO, Штурвал"
         company: "Лаборатория Числитель"
         companyUrl: https://chislitellab.ru/
         date: "Май 2023 - настоящее время"
@@ -554,18 +582,22 @@ params:
       - title: "Habr"
         content: "От DevOps к платформе: как улучшить взаимодействие команд"
         url: "https://habr.com/ru/companies/oleg-bunin/articles/948108/"
+        featured: true
       - title: IT Elements 2025
         content: "Коммерческий дистрибутив или свой собственный K8s. Какой путь выбрать?"
         url: "https://rutube.ru/video/19b48f922cb5d969dc205a5fa63bfb6f/?playlist=1178137"
+        featured: true
       - title: "DevOpsConf 2025"
         content: "А это платформа?"
         url: "https://devopsconf.io/moscow/2025/abstracts/14098"
+        featured: true
       - title: "Monthly Cloud News 23"
         content: "Monthly Cloud News 23: как меняется позиция CIO"
         url: "https://vk.com/video-200452713_456239455?list=ln-H1Po7r5upitZZlsz4u&utm_source=telegram&utm_medium=own&utm_campaign=yandexcloudnews&utm_content=monthlycloudnews23&utm_term=01_10_2024"
       - title: "Habr"
         content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
         url: "https://habr.com/ru/companies/oleg-bunin/articles/821867/"
+        featured: true
       - title: "Fusion Innovation Technologies - Moscow"
         content: "Как технологии в ритейле меняют наши привычки"
         url: "https://youtu.be/ziE6eaTbDG4"
@@ -581,12 +613,14 @@ params:
       - title: DevOpsConf 2021
         content: Несуществующие твари и где они обитают. Виды DevOps-инженеров и как в них разбираться.
         url: "https://devopsconf.io/moscow/2021/abstracts/7532"
+        featured: true
       - title: X5 Retail Hero
         content: Карьера в IT.
         url: https://www.youtube.com/watch?v=IQFVD7pZxQU
       - title: DevOpsDays Moscow 2019
         content: DevOps в Enterprise.
         url: https://www.youtube.com/watch?v=V6Dz7E1Xquc
+        featured: true
       
 
 
@@ -643,10 +677,34 @@ params:
   #Contact
   contact:
     enable: true
-    title: "Остаёмся на связи!"
-    content: "Я регулярно проверяю почту: если есть желание предложить что-то интересное или просто сказать \"Привет!\", пишите! Я обязательно отвечу."
+    title: "Есть задача? Давай посмотрим."
+    content: "Можно прийти с конкретным вопросом или просто описать ситуацию. Если я понимаю, чем могу быть полезен — предложу формат. Если нет — скажу прямо."
     email: vladimir@utratenko.ru
-    btnName: Написать письмо
+    btnName: Написать на почту
+    telegram: https://t.me/really_vova
+    telegramName: Написать в Telegram
+
+  home:
+    seoTitle: "Владимир Утратенко — DevOps, архитектура, IT-карьера и технические проекты"
+    credibility: "CPO · CTO · Platform Engineering · DevOps · B2B IT"
+    about:
+      title: "Обо мне"
+      path: "System Engineer → DevOps / Platform Engineering → CTO → CPO"
+      companies: "Числитель · Uzum · РТК ИТ · R1 · Sravni · X5 Group · Wiley · DBI"
+      content: |
+        Начинал системным инженером, затем занимался DevOps, Platform Engineering и инфраструктурой, управлял техническими командами и работал CTO. Сейчас отвечаю за продукт Штурвал.
+
+        За это время успел посмотреть на IT с инженерной, управленческой и продуктовой стороны.
+    product:
+      title: "Отдельно люблю сложные B2B IT-продукты"
+      content: |
+        Сейчас я CPO Штурвала — коммерческой Kubernetes-платформы для компаний уровня Enterprise.
+
+        Этот опыт полезен, когда нужно разобраться с discovery и roadmap, стратегией технического продукта, enterprise-presale, требованиями крупных заказчиков, позиционированием и тем, как product и engineering договариваются между собой. Особенно — когда технические возможности надо перевести в понятную пользователю и бизнесу ценность.
+
+        Сюда можно прийти с вопросом, если он уже лежит рядом с текущей работой. Отдельный формат «продуктовый консалтинг» я из этого не собираю.
+    publications:
+      title: "Иногда рассказываю о том, что успел проверить на практике"
     # formspree:
     #   enable: true # `contact.email` value will be ignored
     #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
@@ -657,7 +715,7 @@ params:
     recentPosts:
       path: "blogs"
       count: 3
-      title: Recent Posts
+      title: Последние записи
       enable: true
       disableFeaturedImage: false
     socialNetworks:

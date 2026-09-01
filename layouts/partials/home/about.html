@@ -1,0 +1,21 @@
+{{ with .Site.Params.home.about }}
+<section id="about" class="py-5 home-section">
+    <div class="container px-3 px-sm-5">
+        <h2 class="home-section-title text-center">{{ .title | default "Обо мне" }}</h2>
+        <div class="home-about">
+            <div class="home-prose">
+                {{ .content | markdownify }}
+            </div>
+            {{ with .path }}
+            <p class="home-career-path" aria-label="Карьерный путь">{{ . }}</p>
+            {{ end }}
+            {{ with .companies }}
+            <p class="home-companies">{{ . }}</p>
+            {{ end }}
+            <p class="mb-0">
+                <a class="btn" href="{{ "/cv/" | relLangURL }}">Полное резюме</a>
+            </p>
+        </div>
+    </div>
+</section>
+{{ end }}

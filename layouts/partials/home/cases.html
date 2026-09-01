@@ -1,0 +1,28 @@
+{{ $cases := where .Site.RegularPages "Section" "cases" }}
+{{ $featured := where $cases "Params.featured_home" true }}
+{{ $featured := sort $featured "Weight" }}
+{{ if $featured }}
+<section id="cases" class="py-5 home-section">
+    <div class="container px-3 px-sm-5">
+        <h2 class="home-section-title text-center">Кейсы</h2>
+        <div class="home-card-grid home-cases-grid">
+            {{ range $featured }}
+            <article class="home-card home-case-card">
+                <h3 class="home-card-title">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h3>
+                {{ with .Params.description }}
+                <p class="home-card-lead">{{ . }}</p>
+                {{ end }}
+                <a class="home-text-link" href="{{ .RelPermalink }}">Читать кейс</a>
+            </article>
+            {{ end }}
+        </div>
+        {{ with .Site.GetPage "/cases" }}
+        <p class="text-center mt-4 mb-0">
+            <a class="home-text-link" href="{{ .RelPermalink }}">Все кейсы</a>
+        </p>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

@@ -1,0 +1,15 @@
+{{ with .Site.Data.results }}
+<section id="results" class="py-5 home-section">
+    <div class="container px-3 px-sm-5">
+        <h2 class="home-section-title text-center">Результаты</h2>
+        <div class="home-results-grid">
+            {{ range sort . "order" }}
+            <article class="home-result">
+                <p class="home-result-value">{{ .value }}</p>
+                <p class="home-result-desc">{{ .description }}</p>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

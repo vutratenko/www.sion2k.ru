@@ -1,0 +1,25 @@
+<span>
+    {{ range .Site.Params.hero.socialLinks.fontAwesomeIcons }}
+    <span class="px-1">
+        <a href="{{ .url }}"
+            {{ if not (hasPrefix .url "#") }} target="_blank" rel="noopener"{{ end }}
+            class="btn social-icon"
+            {{ with .label }}aria-label="{{ . }}"{{ end }}
+        >
+            <i class="{{ .icon }}" aria-hidden="true"></i>
+        </a>
+    </span>
+    {{ end }}
+
+    {{ range .Site.Params.hero.socialLinks.customIcons }}
+    <span class="px-1">
+        <a href="{{ .url }}"
+            {{ if not (hasPrefix .url "#") }} target="_blank" rel="noopener"{{ end }}
+            class="btn social-icon"
+            {{ with .label }}aria-label="{{ . }}"{{ end }}
+        >
+            <img src="{{ .icon }}" alt="{{ .label | default "" }}">
+        </a>
+    </span>
+    {{ end }}
+</span>

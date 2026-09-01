@@ -1,0 +1,22 @@
+{{ $items := .Site.Data.testimonials.items }}
+{{ if $items }}
+<section id="testimonials" class="py-5 home-section">
+    <div class="container px-3 px-sm-5">
+        <h2 class="home-section-title text-center">
+            {{ .Site.Params.home.testimonials.title | default "Отзывы" }}
+        </h2>
+        <div class="home-card-grid">
+            {{ range sort $items "order" }}
+            <figure class="home-card home-testimonial">
+                <blockquote class="home-card-lead">{{ .quote }}</blockquote>
+                <figcaption>
+                    <strong>{{ .author }}</strong>
+                    {{ with .role }}<span class="d-block text-secondary">{{ . }}</span>{{ end }}
+                    {{ with .context }}<span class="home-pub-venue">{{ . }}</span>{{ end }}
+                </figcaption>
+            </figure>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

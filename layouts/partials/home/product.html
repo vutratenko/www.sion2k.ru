@@ -1,0 +1,12 @@
+{{ with .Site.Params.home.product }}
+<section id="product" class="py-5 home-section">
+    <div class="container px-3 px-sm-5">
+        <div class="home-product">
+            <h2 class="home-section-title">{{ .title }}</h2>
+            <div class="home-prose">
+                {{ .content | markdownify }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
