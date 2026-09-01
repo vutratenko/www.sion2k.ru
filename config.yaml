@@ -582,45 +582,87 @@ params:
       - title: "Habr"
         content: "От DevOps к платформе: как улучшить взаимодействие команд"
         url: "https://habr.com/ru/companies/oleg-bunin/articles/948108/"
-        featured: true
+        type: article
+        year: 2025
+        badge: "Статья"
+        icon: "fa-solid fa-newspaper"
       - title: IT Elements 2025
         content: "Коммерческий дистрибутив или свой собственный K8s. Какой путь выбрать?"
         url: "https://rutube.ru/video/19b48f922cb5d969dc205a5fa63bfb6f/?playlist=1178137"
-        featured: true
+        type: talk
+        year: 2025
+        badge: "Доклад"
+        icon: "fa-solid fa-microphone"
       - title: "DevOpsConf 2025"
         content: "А это платформа?"
         url: "https://devopsconf.io/moscow/2025/abstracts/14098"
-        featured: true
+        type: talk
+        year: 2025
+        badge: "Доклад"
+        icon: "fa-solid fa-microphone"
       - title: "Monthly Cloud News 23"
         content: "Monthly Cloud News 23: как меняется позиция CIO"
         url: "https://vk.com/video-200452713_456239455?list=ln-H1Po7r5upitZZlsz4u&utm_source=telegram&utm_medium=own&utm_campaign=yandexcloudnews&utm_content=monthlycloudnews23&utm_term=01_10_2024"
+        type: talk
+        year: 2024
+        badge: "Видео"
+        icon: "fa-solid fa-video"
       - title: "Habr"
         content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
         url: "https://habr.com/ru/companies/oleg-bunin/articles/821867/"
-        featured: true
+        type: article
+        year: 2024
+        badge: "Статья"
+        icon: "fa-solid fa-newspaper"
       - title: "Fusion Innovation Technologies - Moscow"
         content: "Как технологии в ритейле меняют наши привычки"
         url: "https://youtu.be/ziE6eaTbDG4"
+        type: talk
+        year: 2020
+        badge: "Доклад"
+        icon: "fa-solid fa-microphone"
       - title: DevOpsConf 2024
         content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
         url: "https://devopsconf.io/moscow/2024/abstracts/11507"
+        type: talk
+        year: 2024
+        badge: "Доклад"
+        icon: "fa-solid fa-microphone"
       - title: UIC.Dev 2023
         content: "Древние свитки CI/CD: смыслы, которые мы потеряли."
         url: "https://conf23.uic.dev/speakers/114"
+        type: talk
+        year: 2023
+        badge: "Доклад"
+        icon: "fa-solid fa-microphone"
       - title: UIC.Dev 2022
         content: Управление инфраструктурой – это тоже про разработку?
         url: "https://uic.dev/speakers/utratenko"
+        type: talk
+        year: 2022
+        badge: "Доклад"
+        icon: "fa-solid fa-microphone"
       - title: DevOpsConf 2021
         content: Несуществующие твари и где они обитают. Виды DevOps-инженеров и как в них разбираться.
         url: "https://devopsconf.io/moscow/2021/abstracts/7532"
-        featured: true
+        type: talk
+        year: 2021
+        badge: "Доклад"
+        icon: "fa-solid fa-microphone"
       - title: X5 Retail Hero
         content: Карьера в IT.
         url: https://www.youtube.com/watch?v=IQFVD7pZxQU
+        type: talk
+        year: 2020
+        badge: "Видео"
+        icon: "fa-solid fa-video"
       - title: DevOpsDays Moscow 2019
         content: DevOps в Enterprise.
         url: https://www.youtube.com/watch?v=V6Dz7E1Xquc
-        featured: true
+        type: talk
+        year: 2019
+        badge: "Доклад"
+        icon: "fa-solid fa-microphone"
       
 
 

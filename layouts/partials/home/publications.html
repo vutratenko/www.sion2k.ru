@@ -1,18 +1,36 @@
-{{ $pubs := slice }}
-{{ range .Site.Params.achievements.items }}
-    {{ if .featured }}
-        {{ $pubs = $pubs | append . }}
-    {{ end }}
-{{ end }}
+{{ $pubs := .Site.Params.achievements.items }}
 {{ if $pubs }}
+{{ $talks := where $pubs "type" "talk" }}
+{{ $articles := where $pubs "type" "article" }}
 <section id="publications" class="py-5 home-section">
     <div class="container px-3 px-sm-5">
         <h2 class="home-section-title text-center">
             {{ .Site.Params.home.publications.title | default "Иногда рассказываю о том, что успел проверить на практике" }}
         </h2>
+
+        <div class="home-tabs-nav" role="tablist" aria-label="Фильтр публикаций">
+            <button type="button" class="home-tab-btn is-active" data-filter="all" role="tab" aria-selected="true">
+                Все ({{ len $pubs }})
+            </button>
+            <button type="button" class="home-tab-btn" data-filter="talk" role="tab" aria-selected="false">
+                Выступления ({{ len $talks }})
+            </button>
+            <button type="button" class="home-tab-btn" data-filter="article" role="tab" aria-selected="false">
+                Статьи ({{ len $articles }})
+            </button>
+        </div>
+
         <div class="home-card-grid home-pubs-grid">
             {{ range $pubs }}
-            <article class="home-card home-card-compact">
+            <article class="home-card home-card-compact home-pub-card" data-type="{{ .type | default "talk" }}">
+                <div class="home-pub-card-head">
+                    {{ with .icon }}
+                    <span class="home-pub-icon" aria-hidden="true"><i class="{{ . }}"></i></span>
+                    {{ end }}
+                    {{ with .badge }}
+                    <span class="home-pub-badge">{{ . }}</span>
+                    {{ end }}
+                </div>
                 <p class="home-pub-venue">{{ .title }}</p>
                 <h3 class="home-card-title h5">
                     {{ if .url }}
@@ -21,9 +39,39 @@
                     {{ .content }}
                     {{ end }}
                 </h3>
+                {{ with .year }}
+                <p class="home-pub-year">{{ . }}</p>
+                {{ end }}
             </article>
             {{ end }}
         </div>
     </div>
 </section>
+<script>
+(function () {
+    var section = document.getElementById("publications");
+    if (!section) return;
+
+    var tabs = section.querySelectorAll(".home-tab-btn");
+    var cards = section.querySelectorAll(".home-pub-card");
+
+    tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+            var filter = tab.getAttribute("data-filter");
+
+            tabs.forEach(function (item) {
+                var active = item === tab;
+                item.classList.toggle("is-active", active);
+                item.setAttribute("aria-selected", active ? "true" : "false");
+            });
+
+            cards.forEach(function (card) {
+                var type = card.getAttribute("data-type");
+                var show = filter === "all" || type === filter;
+                card.hidden = !show;
+            });
+        });
+    });
+})();
+</script>
 {{ end }}
