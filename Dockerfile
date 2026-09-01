@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM hugomods/hugo:0.154.5-extended AS builder
+FROM hugomods/hugo:debian-exts-non-root-0.154.5 AS builder
 
 WORKDIR /src
 COPY . .
