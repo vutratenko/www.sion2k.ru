@@ -1,0 +1,71 @@
+{{/* Expects dict: id (section id), title (optional) */}}
+{{ $items := site.Data.appearances }}
+{{ if $items }}
+{{ $conferences := where $items "format" "conference" }}
+{{ $webinars := where $items "format" "webinar" }}
+{{ $podcasts := where $items "format" "podcast" }}
+{{ $panels := where $items "format" "panel" }}
+{{ $articles := where $items "format" "article" }}
+{{ $sectionID := .id | default "appearances-portfolio" }}
+<section id="{{ $sectionID }}" class="py-5 home-section{{ if eq $sectionID "appearances-portfolio" }} speaking-portfolio{{ end }}">
+    <div class="container px-3 px-sm-5">
+        {{ with .title }}
+        <h2 class="home-section-title text-center">{{ . }}</h2>
+        {{ end }}
+
+        <div class="home-tabs-nav" role="tablist" aria-label="Фильтр выступлений">
+            <button type="button" class="home-tab-btn is-active" data-filter="all" role="tab" aria-selected="true">
+                Все ({{ len $items }})
+            </button>
+            <button type="button" class="home-tab-btn" data-filter="conference" role="tab" aria-selected="false">
+                Конференции ({{ len $conferences }})
+            </button>
+            <button type="button" class="home-tab-btn" data-filter="webinar" role="tab" aria-selected="false">
+                Вебинары ({{ len $webinars }})
+            </button>
+            <button type="button" class="home-tab-btn" data-filter="podcast" role="tab" aria-selected="false">
+                Подкасты ({{ len $podcasts }})
+            </button>
+            <button type="button" class="home-tab-btn" data-filter="panel" role="tab" aria-selected="false">
+                Панели ({{ len $panels }})
+            </button>
+            <button type="button" class="home-tab-btn" data-filter="article" role="tab" aria-selected="false">
+                Статьи ({{ len $articles }})
+            </button>
+        </div>
+
+        <div class="home-card-grid home-pubs-grid">
+            {{ range $items }}
+            {{ partial "appearances/card.html" (dict "item" .) }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+<script>
+(function () {
+    var section = document.getElementById("{{ $sectionID }}");
+    if (!section) return;
+
+    var tabs = section.querySelectorAll(".home-tab-btn");
+    var cards = section.querySelectorAll(".home-pub-card");
+
+    tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+            var filter = tab.getAttribute("data-filter");
+
+            tabs.forEach(function (item) {
+                var active = item === tab;
+                item.classList.toggle("is-active", active);
+                item.setAttribute("aria-selected", active ? "true" : "false");
+            });
+
+            cards.forEach(function (card) {
+                var format = card.getAttribute("data-format");
+                var show = filter === "all" || format === filter;
+                card.hidden = !show;
+            });
+        });
+    });
+})();
+</script>
+{{ end }}

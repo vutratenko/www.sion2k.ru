@@ -1,0 +1,75 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Site.Params.speaking.description | default .Params.description }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/index.css" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/home.css" media="all">
+<script defer src="{{ .Site.Params.staticPath }}/fontawesome-6/all-6.4.2.js"></script>
+{{ end }}
+
+{{ define "title" }}
+{{ .Site.Params.speaking.seoTitle | default (printf "%s | %s" .Title .Site.Title) }}
+{{ end }}
+
+{{ define "main" }}
+<section id="speaking-intro" class="py-5 home-section">
+    <div class="container px-3 px-sm-5 speaking-intro">
+        <h1 class="home-section-title text-center mb-3">{{ .Title }}</h1>
+        {{ with .Site.Params.speaking.intro }}
+        <div class="home-prose text-center">{{ . | markdownify }}</div>
+        {{ end }}
+    </div>
+</section>
+
+{{ with .Site.Params.speaking.topics }}
+<section id="speaking-topics" class="py-5 home-section">
+    <div class="container px-3 px-sm-5">
+        <h2 class="home-section-title text-center">
+            {{ $.Site.Params.speaking.topicsTitle | default "О чём могу рассказать" }}
+        </h2>
+        <ul class="speaking-topics-list">
+            {{ range . }}
+            <li>{{ . }}</li>
+            {{ end }}
+        </ul>
+    </div>
+</section>
+{{ end }}
+
+{{ with .Site.Params.speaking.formats }}
+<section id="speaking-formats" class="py-5 home-section">
+    <div class="container px-3 px-sm-5">
+        <h2 class="home-section-title text-center">
+            {{ $.Site.Params.speaking.formatsTitle | default "Форматы" }}
+        </h2>
+        <div class="home-card-grid home-formats-grid">
+            {{ range . }}
+            <article class="home-card home-card-compact">
+                <h3 class="home-card-title h5">{{ .title }}</h3>
+                <p class="home-card-lead mb-0">{{ .description }}</p>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ partial "appearances/portfolio.html" (dict "id" "appearances-portfolio" "title" (.Site.Params.speaking.portfolioTitle | default "Выступления и публикации")) }}
+
+{{ with .Site.Params.speaking.inviteCTA }}
+<section id="speaking-invite" class="py-5 home-section">
+    <div class="container px-3 px-sm-5 text-center speaking-invite">
+        <h2 class="home-section-title">{{ .title }}</h2>
+        {{ with .content }}
+        <div class="home-prose">{{ . | markdownify }}</div>
+        {{ end }}
+        <div class="home-contact-actions d-flex flex-wrap justify-content-center">
+            {{ with .meetUrl }}
+            <a href="{{ . }}" class="btn" target="_blank" rel="noopener">{{ $.Site.Params.speaking.inviteCTA.meetLabel | default "Запланировать разговор" }}</a>
+            {{ end }}
+            {{ with .contactUrl }}
+            <a href="{{ . | relLangURL }}" class="btn home-btn-secondary">{{ $.Site.Params.speaking.inviteCTA.contactLabel | default "Написать" }}</a>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}

@@ -1,0 +1,22 @@
+{{/* Expects dict with keys: item */}}
+<article class="home-card home-card-compact home-pub-card" data-format="{{ .item.format }}">
+    <div class="home-pub-card-head">
+        {{ with .item.icon }}
+        <span class="home-pub-icon" aria-hidden="true"><i class="{{ . }}"></i></span>
+        {{ end }}
+        {{ with .item.badge }}
+        <span class="home-pub-badge">{{ . }}</span>
+        {{ end }}
+    </div>
+    <p class="home-pub-venue">{{ .item.title }}</p>
+    <h3 class="home-card-title h5">
+        {{ if .item.url }}
+        <a href="{{ .item.url }}" target="_blank" rel="noopener">{{ .item.content }}</a>
+        {{ else }}
+        {{ .item.content }}
+        {{ end }}
+    </h3>
+    {{ with .item.year }}
+    <p class="home-pub-year">{{ . }}</p>
+    {{ end }}
+</article>

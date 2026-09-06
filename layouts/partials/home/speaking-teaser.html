@@ -1,0 +1,34 @@
+{{ $items := .Site.Data.appearances }}
+{{ $featured := where $items "featured" true }}
+{{ if and $items $featured }}
+<section id="speaking" class="py-5 home-section">
+    <div class="container px-3 px-sm-5">
+        <h2 class="home-section-title text-center">
+            {{ .Site.Params.home.speaking.teaserTitle | default "Публичный эксперт: конференции, вебинары, подкасты, панели" }}
+        </h2>
+        {{ with .Site.Params.home.speaking.teaserLead }}
+        <div class="home-prose text-center home-speaking-lead">
+            {{ . | markdownify }}
+        </div>
+        {{ end }}
+
+        <ul class="home-format-pills" aria-label="Форматы выступлений">
+            {{ range .Site.Params.home.speaking.formatPills }}
+            <li>{{ . }}</li>
+            {{ end }}
+        </ul>
+
+        <div class="home-card-grid home-speaking-teaser-grid">
+            {{ range $featured }}
+            {{ partial "appearances/card.html" (dict "item" .) }}
+            {{ end }}
+        </div>
+
+        <p class="text-center mt-4 mb-0">
+            <a class="btn" href="{{ `/speaking/` | relLangURL }}">
+                {{ .Site.Params.home.speaking.teaserButton | default "Все выступления и публикации →" }}
+            </a>
+        </p>
+    </div>
+</section>
+{{ end }}
