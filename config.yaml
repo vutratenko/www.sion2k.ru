@@ -585,6 +585,34 @@ params:
     title: "Публикации"
     items:
       - title: "Habr"
+        content: "DevOps после хайпа: что реально работает, почему автоматизация делает вас слабее и как ИИ вписывается в инженерку"
+        url: "https://habr.com/ru/articles/1014860/"
+        type: article
+        year: 2026
+        badge: "Интервью"
+        icon: "fa-solid fa-comments"
+      - title: "AM Live"
+        content: "Эволюция российских систем контейнеризации"
+        url: "https://amlive.ru/am-live/rossijskie-sistemy-kontejnerizacii-3/"
+        type: talk
+        year: 2026
+        badge: "Панель"
+        icon: "fa-solid fa-users"
+      - title: "HighLoad++ 2025"
+        content: "Высшая куберматика: почему пять бинарей — это действительно просто"
+        url: "https://highload.ru/moscow/2025/abstracts/16454"
+        type: talk
+        year: 2025
+        badge: "Воркшоп"
+        icon: "fa-solid fa-microphone"
+      - title: "ProIT Fest Лето 2025"
+        content: "Доавтоматизировались!"
+        url: "https://proitfest.ru/sections-summer-2025/13522-2/"
+        type: talk
+        year: 2025
+        badge: "Круглый стол"
+        icon: "fa-solid fa-users"
+      - title: "Habr"
         content: "От DevOps к платформе: как улучшить взаимодействие команд"
         url: "https://habr.com/ru/companies/oleg-bunin/articles/948108/"
         type: article
