@@ -163,7 +163,7 @@ params:
     socialLinks:
       fontAwesomeIcons:
         - icon: fas fa-calendar
-          url: https://cal.com/sion2k
+          url: https://meet.sion2k.ru/sion2k
           label: Календарь
         - icon: fab fa-telegram
           url: https://t.me/really_vova
