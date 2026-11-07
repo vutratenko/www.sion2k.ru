@@ -7,7 +7,6 @@ resources:
   - namespace.yaml
   - deployment.yaml
   - service.yaml
-  - ingress.yaml
 
 commonLabels:
   app.kubernetes.io/part-of: sion2k-site
